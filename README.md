@@ -1,5 +1,6 @@
 # Whale talk
 
-## A Codecademy project utlizing: for loops, nested loops
-
-### Technologies: Javascript
+## Purpose
+A Codecademy project utlizing:
+* For loops
+* Nested loops
