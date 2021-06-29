@@ -27,7 +27,7 @@ form input, form button {
     padding: .5rem;
     font-size: 2rem;
     border: none;
-    background: white);
+    background: white;
 
 }
 
@@ -36,6 +36,7 @@ form button {
     background: blue;
     cursor: pointer;
     transition: all .5s ease;
+    
 }
 
 form button:hover {
@@ -50,6 +51,7 @@ justify-content: center;
 align-items: center;
 
 }
+
 
  .todo-List{
 min-width: 30%;
@@ -67,11 +69,21 @@ font-size: 1.5rem;
 display: flex;
 justify-content: space-between;
 align-items: center;
+margin-bottom: 8px;
 }
 
 .todo li {
-
-    flex: 1;
+flex: 1;
 }
 
 /**********elements created in JS*/
+
+.complete-btn, .trashButton{
+    background-color: lightblue;
+    border: none;
+    padding: 7px;
+    margin-left: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: green;
+}
