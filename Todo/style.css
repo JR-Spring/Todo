@@ -70,6 +70,8 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 margin-bottom: 8px;
+padding-left: 6px;
+transition: all 1s ease;
 }
 
 .todo li {
@@ -78,7 +80,7 @@ flex: 1;
 
 /**********elements created in JS*/
 
-.complete-btn, .trashButton{
+.complete-btn, .trash-btn{
     background-color: lightblue;
     border: none;
     padding: 7px;
@@ -87,3 +89,33 @@ flex: 1;
     font-size: 1rem;
     color: green;
 }
+
+.fa-trash, .fa-check{
+    pointer-events: none;
+}
+
+.completed{
+text-decoration: line-through;
+opacity: 0.5;
+
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select {
+    color: rebeccapurple;
+    width 10rem;
+    cursor: pointer;
+}   
