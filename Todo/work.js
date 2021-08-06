@@ -1,9 +1,12 @@
+//@ts-check
 // Selectors
 
 const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-List");
 document.createElement('script').src = 'http://Todo/work.js';
+// Field just states its required not limiting 
+document.getElementById("myText").required = true; 
 
 // Event Listeners
 todoButton.addEventListener("click", addTodo);
@@ -23,7 +26,7 @@ todoDiv.classList.add("todo");
 //
 
 const newTodo = document.createElement("li");
-newTodo.innerText = todoInput.value;
+newTodo.innerText = todoInput.value; 
 newTodo.classList.add('todo-item');
 todoDiv.appendChild(newTodo);
 
@@ -40,6 +43,7 @@ trashButton.innerHTML = '<i class= "fas fa-trash"></i>';
 trashButton.classList.add("trash-btn");
 todoDiv.appendChild(trashButton);
 
+// Add to do to list
 todoList.appendChild(todoDiv);
 
 //Clears input field after adding todo item to list 
@@ -53,4 +57,10 @@ if (item.classList[0] === "trash-btn") {
     todo.remove();
     }
 
-}
+// Check mark
+if (item.classList[0] === "complete-btn") {
+const todo = item.parentElement;
+todo.classList.toggle("completed")
+ }
+
+};
