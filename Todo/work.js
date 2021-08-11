@@ -7,6 +7,7 @@ const todoList = document.querySelector(".todo-List");
 document.createElement('script').src = 'http://Todo/work.js';
 // Field just states its required not limiting 
 document.getElementById("myText").required = true; 
+const filterOption = document.querySelector('.filter-todo');
 
 // Event Listeners
 todoButton.addEventListener("click", addTodo);
@@ -64,3 +65,8 @@ todo.classList.toggle("completed")
  }
 
 };
+
+ function filterTodo(e){
+    const todos = todoList.childNodes;
+
+ }
