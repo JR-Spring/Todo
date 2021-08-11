@@ -38,6 +38,7 @@ form button {
     cursor: pointer;
     transition: all .5s ease;
     
+    
 }
 
 form button:hover {
@@ -55,13 +56,11 @@ margin-top: 3rem;
 
 }
 
-
  .todo-List{
 min-width: 30%;
 list-style: none;
 /* padding-bottom: 5rem ;  */
 }
-
 
 /************ elements created in JS*/
 .todo {
@@ -88,10 +87,10 @@ flex: 1;
     background-color: lightblue;
     border: none;
     padding: 7px;
-    margin-left: 3px;
+    margin-left: 7px;
     cursor: pointer;
     font-size: 1rem;
-    color: green;
+    color: rgb(20, 110, 20);
 }
 
 .fa-trash, .fa-check{
@@ -113,7 +112,7 @@ select {
 }
 
 .select {
-    margin: 1rem;
+    margin: 2rem;
     position: relative;
     overflow: hidden;
 }
@@ -123,5 +122,18 @@ select {
     width: 10rem;
     cursor: pointer;
     border-radius: 2px;
-padding: 5px;
+    padding: 1rem;
 }   
+
+.select::after {
+    content: "\25BC"; 
+    position: absolute;
+    background:blue;
+    color: white;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    
+}
+
