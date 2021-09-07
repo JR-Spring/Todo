@@ -1,11 +1,4 @@
-# Miscellaneous Javascript exercises and an underway "To do" project.
+# To do list
 
-## Purpose
-
-A Codecademy exercises and a personal project utlizing:
-
-* For loops
-* Nested loops
-* Arrays
-* Objects
-* Functions
+* Drop down menu with complete and incomplete options for todo items.
+* Local Storage for todo items.  
