@@ -25,7 +25,7 @@ event.preventDefault();
 const todoDiv = document.createElement("div");
 todoDiv.classList.add("todo");
 
-//
+// Create LI
 
 const newTodo = document.createElement("li");
 newTodo.innerText = todoInput.value; 
