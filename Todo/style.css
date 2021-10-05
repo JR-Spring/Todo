@@ -28,7 +28,7 @@ form input, form button {
     font-size: 2rem;
     border: none;
     background: white;
-    border-radius: 3px;
+    border-radius: 9px;
 
 }
 
@@ -93,6 +93,10 @@ flex: 1;
     color: rgb(20, 110, 20);
 }
 
+.complete-btn{
+    background-color: rgb(179, 231, 56);
+}
+
 .fa-trash, .fa-check{
     pointer-events: none;
 }
@@ -100,7 +104,6 @@ flex: 1;
 .completed{
 text-decoration: line-through;
 opacity: 0.5;
-
 }
 
 select {

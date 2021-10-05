@@ -15,25 +15,22 @@ todoList.addEventListener("click", deleteCheck);
 filterOption.addEventListener('click', filterTodo);
 
 
-//Created function and created elements in JS versus HTML, appended created elements to div 
+// Functions
 function addTodo(event){
-
-// Prevent form from submitting
-event.preventDefault();
+// Prevents form from submitting
+event.preventDefault(); 
 
 // Todo Div
 const todoDiv = document.createElement("div");
 todoDiv.classList.add("todo");
 
 // Create LI
-
 const newTodo = document.createElement("li");
 newTodo.innerText = todoInput.value; 
 newTodo.classList.add('todo-item');
 todoDiv.appendChild(newTodo);
 
-
-// Check mark button when items completed
+// Check mark button 
 const completedButton = document.createElement("button");
 completedButton.innerHTML = '<i class= "fas fa-check"></i>';
 completedButton.classList.add("complete-btn");
