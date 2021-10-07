@@ -15,7 +15,7 @@ todoList.addEventListener("click", deleteCheck);
 filterOption.addEventListener('click', filterTodo);
 
 
-// Functions
+//***************Functions******************
 function addTodo(event){
 // Prevents form from submitting
 event.preventDefault(); 
@@ -45,7 +45,7 @@ todoDiv.appendChild(trashButton);
 // Add to do to list
 todoList.appendChild(todoDiv);
 
-//Clears input field after adding todo item to list 
+// Clears input field after adding todo item to list 
 todoInput.value = "";
 }
 
@@ -54,16 +54,16 @@ const item = e.target;
 if (item.classList[0] === "trash-btn") {
     const todo = item.parentElement;
     todo.remove();
-    }
+}
 
 // Check mark
 if (item.classList[0] === "complete-btn") {
 const todo = item.parentElement;
 todo.classList.toggle("completed")
- }
+}
 
 };
-// Code applies to the All, Complete, Incomplete drop down, will only show todo's that are complete or incomplete when an option is chosen. 
+// Filter options All, Complete, Incomplete in drop down 
  function filterTodo(e){
     const todos = todoList.childNodes;
     todos.forEach(function(todo) {
@@ -92,7 +92,6 @@ todo.classList.toggle("completed")
  }  
 
  function saveTodos(todo) {
-
     let todos;
     // If no todos created add todo to below empty array
     if (localStorage.getItem('todos') === null) {
@@ -143,16 +142,16 @@ function getTodos(){
 }
 
 function removeLocalTodos(todo) {
-       let todos;
+    let todos;
 
-       if (localStorage.getItem('todos') === null) {
-           todos = [];
-       }
-       else {
-       todos = JSON.parse(localStorage.getItem('todos'));
-       }
-       console.log(todo.children[0].innerText);
-       todos.splice(todos.indexOf(todoIndex), 1);
-       localStorage.setItem('todos',JSON.stringify(todos));
+    if (localStorage.getItem('todos') === null) {
+        todos = [];
+    }
+    else {
+    todos = JSON.parse(localStorage.getItem('todos'));
+    }
+    console.log(todo.children[0].innerText);
+    todos.splice(todos.indexOf(todoIndex), 1);
+    localStorage.setItem('todos',JSON.stringify(todos));
    
 }
