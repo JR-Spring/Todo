@@ -13,6 +13,7 @@ const filterOption = document.querySelector('.filter-todo');
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
 filterOption.addEventListener('click', filterTodo);
+document.addEventListener('DOMContentLoaded', getTodos )
 
 
 //***************Functions******************
@@ -29,6 +30,9 @@ const newTodo = document.createElement("li");
 newTodo.innerText = todoInput.value; 
 newTodo.classList.add('todo-item');
 todoDiv.appendChild(newTodo);
+
+// Save to local storage
+saveLocalTodos(todoInput.value)
 
 // Check mark button 
 const completedButton = document.createElement("button");
@@ -53,6 +57,7 @@ function deleteCheck(e){
 const item = e.target;
 if (item.classList[0] === "trash-btn") {
     const todo = item.parentElement;
+    removeLocalTodos(todo);
     todo.remove();
 }
 
@@ -63,6 +68,8 @@ todo.classList.toggle("completed")
 }
 
 };
+
+
 // Filter options All, Complete, Incomplete in drop down 
  function filterTodo(e){
     const todos = todoList.childNodes;
@@ -79,19 +86,19 @@ todo.classList.toggle("completed")
                         todo.style.display = "none";
                     }
                     break;
-                    case "incomplete":
-                        if(!todo.classList.contains('completed')){
-                            todo.style.display = "flex";
-                        }   
-                        else {
-                            todo.style.display = "none";
-                        } 
-                        break;              
+                case "incomplete":
+                    if(!todo.classList.contains('completed')){
+                        todo.style.display = "flex";
+                    }   
+                    else {
+                        todo.style.display = "none";
+                    } 
+                    break;              
         }                   
     });
  }  
 
- function saveTodos(todo) {
+ function saveLocalTodos(todo) {
     let todos;
     // If no todos created add todo to below empty array
     if (localStorage.getItem('todos') === null) {
@@ -105,6 +112,7 @@ todo.classList.toggle("completed")
 }
 
 function getTodos(){
+    
    let todos;
 
    if (localStorage.getItem('todos') === null) {
@@ -112,7 +120,7 @@ function getTodos(){
    }
    else {
        todos = JSON.parse(localStorage.getItem('todos'));
-       }
+    }
    todos.forEach(function(todo){
        //Todo Div
        const todoDiv = document.createElement("div");
@@ -150,7 +158,7 @@ function removeLocalTodos(todo) {
     else {
     todos = JSON.parse(localStorage.getItem('todos'));
     }
-    console.log(todo.children[0].innerText);
+    const todoIndex = todo.children[0].innerText;
     todos.splice(todos.indexOf(todoIndex), 1);
     localStorage.setItem('todos',JSON.stringify(todos));
    
